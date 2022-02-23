@@ -1,8 +1,8 @@
 package fr.tzoreol.cours_ejb;
 
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 
-@Stateful
+@Stateless
 public class MyBean {
     public long id;
 
