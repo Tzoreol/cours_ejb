@@ -1,0 +1,4 @@
+# Project exclude paths
+/.idea/
+/target/
+/cours_ejb.iml
