@@ -5,7 +5,7 @@ import javax.ejb.EJB;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", pa = "/")
+@WebServlet(name = "helloServlet", value = "/")
 public class HelloServlet extends HttpServlet {
     @EJB
     MyBean beanOne;
