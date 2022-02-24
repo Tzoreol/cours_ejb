@@ -2,6 +2,7 @@ package fr.tzoreol.cours_ejb;
 
 import fr.tzoreol.cours_ejb.ejbs.Cart;
 import fr.tzoreol.cours_ejb.ejbs.Converter;
+import fr.tzoreol.cours_ejb.ejbs.impl.CounterBean;
 
 import java.io.*;
 import javax.ejb.EJB;
@@ -15,6 +16,9 @@ public class HelloServlet extends HttpServlet {
 
     @EJB
     Converter converter;
+
+    @EJB
+    CounterBean counter;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
@@ -30,6 +34,7 @@ public class HelloServlet extends HttpServlet {
         out.println("<h1>" + this.cart.displayCustomer() + "</h1>");
         out.println("<h3>" + this.cart.displayCart() + "</h3>");
         out.println("<h2>TOTAL - " + this.converter.usdToEur(this.cart.getTotal()) + "</h3>");
+        out.println("<h4>" + this.counter.getCount() + "</h4>");
         out.println("</body></html>");
     }
 
